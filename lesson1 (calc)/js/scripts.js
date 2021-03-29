@@ -9,19 +9,52 @@ window.onload = function(e){
     let span = document.querySelector('.res');
     
     btnSum.onclick = function(){
-        var res = parseInt(inp1.value) + parseInt(inp2.value);
-        span.innerHTML = res;
+        calcForm('+');
+        this.disabled = true;   //делаем кнопку не активной
+        //this.setAttribute('disabled', 'disabled');
     }
     btnMin.onclick = function(){
-        var res = parseInt(inp1.value) - parseInt(inp2.value);
-        span.innerHTML = res;
+        calcForm('-');
+        this.disabled = true;
     }
     btnMul.onclick = function(){
-        var res = parseInt(inp1.value) * parseInt(inp2.value);
-        span.innerHTML = res;
+        calcForm('*');
+        this.disabled = true;
     }
     btnDiv.onclick = function(){
-        var res = parseInt(inp1.value) / parseInt(inp2.value);
+        calcForm('/');
+        this.disabled = true;
+    }
+
+    //делаем кнопки активными после ввода newЗначения в поле input
+    inp1.oninput = btnEnable;
+    inp2.oninput = btnEnable;
+
+    function btnEnable() {
+        //btnSum.removeAttribute('disabled')
+        btnSum.disabled = false;
+        btnMin.disabled = false;
+        btnMul.disabled = false;
+        btnDiv.disabled = false;
+    }
+
+    function calcForm(op) {
+        let a = parseInt(inp1.value);
+        let b = parseInt(inp2.value);
+        let res;
+
+        if (op === '+') {
+            res = a + b;
+        } else if ( op === '-') {
+            res = a - b;
+        } else if ( op === '*') {
+            res = a * b;
+        } else if ( op === '/') {
+            res = a / b;
+            if (b === 0) {
+                res = "на ноль делить нельзя"
+            }
+        }
         span.innerHTML = res;
     }
 }
