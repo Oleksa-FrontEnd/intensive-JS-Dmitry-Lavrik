@@ -3,7 +3,7 @@ window.onload = function () {
     let btn_next = document.querySelector('.gallery .buttons .next');
 */
     let images = document.querySelectorAll('.gallery .photos img');
-
+    console.log(images);
     let slider = new Slider(images);
 
     document.querySelector('.gallery .buttons .prev').onclick = function () {
@@ -15,25 +15,25 @@ window.onload = function () {
 }
     function Slider(images) {
         this.images = images;
-        this.i = 0;
+        let i = 0;
 
         this.prev = function () {
-            this.images[this.i].classList.remove('showed');
-            this.i--;
+            this.images[i].classList.remove('showed', ['showed']);
+            i--;
 
-            if (this.i < 0) {
-                this.i = this.images.length - 1;
+            if (i < 0) {
+                i = this.images.length - 1;
             }
-            this.images.classList.add('showed');
+            this.images.classList.add('showed', ['showed']);
         }
 
         this.next = function () {
-            this.images[this.i].classList.remove('showed');
-            this.i++;
+            this.images[i].classList.remove('showed', ['showed']);
+            i++;
 
-            if (this.i >= this.images.length) {
-                this.i = 0;
+            if (i > this.images.length) {
+                i = 0;
             }
-            this.images.classList.add('showed');
+            this.images.classList.add('showed', ['showed']);
         }
     }

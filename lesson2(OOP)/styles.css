@@ -1,17 +1,30 @@
+html, body, ul, li {
+    margin: 0;
+    padding: 0;
+}
 .gallery {
+    max-width: 70%;
     margin: 0 auto;
     text-align: center;
+    background-color: lightpink;
 }
 .gallery .photos {
     position: relative;
-    height: auto;
+    height: 760px;
+    display: block;
+    margin: 0 auto;
 }
 .gallery .photos img {
+    max-width: 70%;
     position: absolute;
     left: 0;
     opacity: 0;
-    transition: 1s;
+    transition: opacity 1s;
+
 }
 .gallery .photos img.showed {
     opacity: 1;
+}
+.buttons {
+    background-color: yellowgreen;
 }
