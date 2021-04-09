@@ -28,5 +28,6 @@ html, body, ul, li {
     opacity: 1;
 }
 .buttons {
-    background-color: yellowgreen;
+    padding-bottom: 5%;
 }
+

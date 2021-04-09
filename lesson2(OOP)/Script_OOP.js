@@ -24,16 +24,16 @@ window.onload = function () {
             if (this.i < 0) {
                 this.i = this.images.length - 1;
             }
-            this.images.classList.add('showed');
+            this.images[this.i].classList.add('showed');
         }
 
         this.next = function () {
             this.images[this.i].classList.remove('showed');
             this.i++;
 
-            if (this.i > this.images.length) {
+            if (this.i >= this.images.length) {
                 this.i = 0;
             }
-            this.images.classList.add('showed');
+            this.images[this.i].classList.add('showed');
         }
     }
