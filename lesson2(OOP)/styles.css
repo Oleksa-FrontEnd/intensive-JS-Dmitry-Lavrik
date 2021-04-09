@@ -10,16 +10,18 @@ html, body, ul, li {
 }
 .gallery .photos {
     position: relative;
-    height: 760px;
+    height: 700px;
     display: block;
     margin: 0 auto;
 }
 .gallery .photos img {
     max-width: 70%;
     position: absolute;
-    left: 0;
     opacity: 0;
     transition: opacity 1s;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 
 }
 .gallery .photos img.showed {
