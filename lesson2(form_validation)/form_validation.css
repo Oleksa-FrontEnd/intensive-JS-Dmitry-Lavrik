@@ -2,6 +2,7 @@ input {
     border-radius: 5px ;
     margin: 10px;
 }
+/*
 input:invalid {
     border: 2px dashed red;
 }
@@ -12,7 +13,7 @@ input:invalid:required {
 input:valid {
     border: 2px solid black;
 }
-
+*/
 .buttonStyle {
     color: blue;
     border-radius: 25px ;
