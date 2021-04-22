@@ -18,3 +18,12 @@ document.querySelector('#btn-2').onclick = () => {
         console.log('Не нажат')
     }
 }
+document.querySelector('#btn-6').onclick = (event) => {
+    event.preventDefault();
+    let text = document.querySelector('#six');
+    console.log(text.value);
+    text.value = "Super";
+    let form = document.querySelector('form')
+    console.log(form.elements.six.value);
+    console.log(form.elements.seven.value);
+}
